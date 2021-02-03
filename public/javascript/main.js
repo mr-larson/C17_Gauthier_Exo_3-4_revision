@@ -156,23 +156,8 @@ ableau.forEach(element => {
  */
 //4.1
 /* leTableau.forEach(element => {
-    switch(typeof (element)){
-        case "boolean":
-            console.log ("boolean")
-        break
-        case "number":
-            console.log ("number")
-        break
-        case "string":
-            console.log ("string")
-        break
-        case "object":
-            console.log ("object")
-        break
-    default:
-        break  
-    }
-}) */
+    console.log (`L'élement ${element} est de type ${ typeof element}`)
+}); */
 
 //4.2
 /* let lesIntegers =[]
@@ -243,3 +228,60 @@ console.table(pot1);
 console.table(pot2); */
 
 //4.5
+/* let  panier=[]
+ let fruits = []
+ let legumes = []
+ for (let i = 0; i < 8; i++) {
+ if (i<4) {
+   panier.push(prompt("donne moi fruit")+("je suis un fruit")) 
+
+ } else {
+  panier.push(prompt("donne moi legume")+("je suis un legume"))
+ }
+
+ }
+
+ panier.forEach(e => {
+  if (e.includes("je suis un fruit")) {
+    fruits.push(e)
+  } else{
+    legumes.push(e)
+  }
+})
+
+console.table(panier);
+console.table(legumes); 
+console.table(fruits);
+
+ */
+//4.6
+let affaires = ['chaussure classique','t-shirt super héro','pull col roulé'];
+let vetements = [];
+let sousVetements = [];
+let chaussures = [];
+let tailleVetement = affaires.length;
+let i = 0;
+
+alert(`Vous allez pouvoir trier vos affaires parmis les choix suivants : vetement, sous-vetement ou chaussure`);
+
+do {
+    let reponse = prompt(`Où souhaite-tu ranger : ${affaires[0]} : vetement, sous-vetement ou chaussure`);
+
+    if (reponse == 'chaussure') {
+        chaussures.push(affaires.shift());
+    } else if(reponse == 'sous-vetement'){
+        sousVetements.push(affaires.shift());
+    }  else if(reponse == 'vetement'){
+        vetements.push(affaires.shift());
+
+    } else{
+        i--;
+    }
+
+    i++;
+} while (i < tailleVetement);
+
+console.table(affaires);
+console.table(vetements);
+console.table(sousVetements);
+console.table(chaussures);
